@@ -11,6 +11,7 @@ def encode_image(image_file):
 st.set_page_config(page_title="Analisis de imagen", layout="centered", initial_sidebar_state="collapsed")
 # Streamlit page setup
 st.title("Analisis de pizzas 🍕")
+st.text("Este sitio puede decirte si hay una pizza en la imagen o no... Yup, definitivamente. Tambien le puedes preguntar si es hawaiiana o nope. Muy util, la verdad. Quiero una pizza hawaiiana.")
 ke = st.text_input('Ingresa tu Clave... o compra una!')
 os.environ['OPENAI_API_KEY'] = ke
 
@@ -30,7 +31,7 @@ api_key = os.environ['OPENAI_API_KEY']
 client = OpenAI(api_key=api_key)
 
 # File uploader allows user to add their own image
-uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Sube tu imagen aqui, solo se admite jpg png y jpeg", type=["jpg", "png", "jpeg"])
 
 if uploaded_file:
     # Display the uploaded image
@@ -38,7 +39,7 @@ if uploaded_file:
         st.image(uploaded_file, caption=uploaded_file.name, use_container_width=True)
 
 # Toggle for showing additional details input
-show_details = st.toggle("Pregunta algo específico sobre la imagen", value=False)
+show_details = st.toggle("Puedes preguntar algo especifico sobre la imagen si quieres", value=False)
 
 if show_details:
     # Text input for additional details about the image, shown only if toggle is True
@@ -48,7 +49,7 @@ if show_details:
     )
 
 # Button to trigger the analysis
-analyze_button = st.button("Analiza la imagen", type="secondary")
+analyze_button = st.button("Analiza tu pizza", type="primary")
 
 # Check if an image has been uploaded, if the API key is available, and if the button has been pressed
 if uploaded_file is not None and api_key and analyze_button:
