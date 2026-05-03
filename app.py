@@ -15,6 +15,8 @@ ke = st.text_input('Ingresa tu Clave... o compra una!')
 os.environ['OPENAI_API_KEY'] = ke
 
 st.title("Compra una API key", text_alignment="center")
+st.text("Por solo $9999.99 dolares")
+st.button("comprar")
 
 
 
