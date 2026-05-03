@@ -44,7 +44,7 @@ show_details = st.toggle("Puedes preguntar algo especifico sobre la imagen si qu
 if show_details:
     # Text input for additional details about the image, shown only if toggle is True
     additional_details = st.text_area(
-        "Adiciona contexto de la imagen aqui:",
+        "¿Que más quieres saber sobre tu pizza?",
         disabled=not show_details
     )
 
@@ -58,7 +58,7 @@ if uploaded_file is not None and api_key and analyze_button:
         # Encode the image
         base64_image = encode_image(uploaded_file)
     
-        prompt_text = ("Describe what you see in the image in spanish")
+        prompt_text = ("Describe in spanish what you see in the image and say if it has a pizza in it or not and if it has a pizza describe the type of pizza")
     
         if show_details and additional_details:
             prompt_text += (
@@ -102,6 +102,6 @@ if uploaded_file is not None and api_key and analyze_button:
 else:
     # Warnings for user action required
     if not uploaded_file and analyze_button:
-        st.warning("Please upload an image.")
+        st.warning("Sube tu imagen bro...")
     if not api_key:
-        st.warning("Por favor ingresa tu API key.")
+        st.warning("Ingresa tu API key para que funcione la magia")
