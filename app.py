@@ -14,7 +14,7 @@ st.title("Analisis de pizzas 🍕")
 ke = st.text_input('Ingresa tu Clave... o compra una!')
 os.environ['OPENAI_API_KEY'] = ke
 
-st.title("Compra una API key", text-alignment = "center")
+st.title("Compra una API key", text-alignment="center")
 
 
 
