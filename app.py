@@ -18,7 +18,7 @@ st.title("Compra una API key", text_alignment="center")
 st.text("Por solo $9999.99 dolares")
 
 if st.button("comprar"):
-    Um... ¿Que esperabas que ese boton hiciera? no es que tenga acceso a las API keys o lo que sea, no puedes comprar desde aqui, sorry
+    st.text("Um... ¿Que esperabas que ese boton hiciera? no es que tenga acceso a las API keys o lo que sea, no puedes comprar desde aqui, sorry")
 
 
 
